@@ -1,1 +1,42 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-background: (colors.white);
+  --color-text:#333;
+  --color-primary: #1980c4;
+  --color-secondary: #faa519;
+  --color-primary-grident:#5aa0cf70;
+  --color-secondary-grident:#eec17867;
+  --color-white-primary: #ffffff;
+  --color-white-secondary: #f3c884;
+  --color-border: #ddd;
+  --text-primary:#1980c4;
+  --text-secondary:#faa519;
+    --text-white-primary:  #0b1c2c;
+
+  --text-white-secondary: #f3c884;
+  
+}
+
+@layer base{
+    .dark {
+--color-background: theme(colors.gray.900);
+    --color-text:  #eee;
+    --color-primary:  #1e90ff;
+    --color-secondary:#f0a500;
+    --color-white-secondary: #ccc284;
+    --color-border: #444;
+    --color-white-primary: #0b1c2c;
+      --text-primary: #1e90ff;
+  --text-secondary:#f0a500;
+    --text-white-primary:#ffffff;
+
+  --text-white-secondary:  #ccc284;
+    }
+}
+
+  .center {
+    @apply flex justify-center items-center;
+  }
