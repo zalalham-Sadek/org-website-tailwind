@@ -28,3 +28,27 @@ window.addEventListener('DOMContentLoaded', () => {
     }
     updateToggleIcon();
 });
+
+
+
+let lastScrollY = window.scrollY;
+
+window.addEventListener("scroll", () => {
+    const navbar = document.querySelector(".navbar");
+    if (window.scrollY > 100) {
+        navbar.classList.add("navbar-fixed");
+    } else {
+        navbar.classList.remove("navbar-fixed");
+    }
+
+    lastScrollY = window.scrollY;
+});
+
+
+  const toggleBtn = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('navLinks');
+
+  toggleBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('hidden');
+    navLinks.classList.toggle('flex');
+  });
