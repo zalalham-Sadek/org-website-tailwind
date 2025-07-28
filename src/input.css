@@ -1,1 +1,86 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-background: (colors.white);
+  --color-background-white: #ffffff;
+  --color-primary: #1980c4;
+  --color-secondary: #faa519;
+  --color-primary-grident: #5aa0cf70;
+  --color-secondary-grident: #eec17867;
+  --color-primary-text: #0b1c2c;
+  --color-white-secondary: #f3c884;
+  /* --color-border: #ddd; */
+  /* --text-primary:#1980c4; */
+  /* --text-secondary:#faa519; */
+  /* --text-white-primary:  #0b1c2c; */
+  /* --text-white-accent:#333; */
+
+  /* --text-white-secondary: #f3c884; */
+}
+
+@layer base {
+  .dark {
+    --color-background: theme(colors.gray.900);
+    --color-background-white: #0b1c2c;
+    --color-primary: #1e90ff;
+    --color-secondary: #f0a500;
+    --color-primary-grident: #5aa0cf70;
+    --color-secondary-grident: #eec17867;
+    --color-primary-text: #ffffff;
+    --color-white-secondary: #ccc284;
+    --color-border: #444;
+    /* --text-primary: #1e90ff;
+  --text-secondary:#f0a500;
+    --text-white-primary:#ffffff;
+    --text-white-accent: #eee;
+  --text-white-secondary:  #ccc284; */
+  }
+
+
+ 
+}
+
+
+
+/* Navbar animation keyframes */
+@layer utilities {
+  /* @keyframes slideDown {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-slideDown {
+    animation: slideDown 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  } */
+.navbar-fixed {
+  @apply fixed top-0 left-0 w-full z-[999] shadow-lg opacity-100 transform translate-y-0;
+  will-change: transform, opacity;
+}
+
+
+
+}
+
+   .center {
+  @apply flex justify-center items-center;
+}
+
+.active{
+  @apply text-primary border-b-secondary;
+}
+.animate-left.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+.animate-right.show {
+  opacity: 1;
+  transform: translateX(0);
+}
