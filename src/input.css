@@ -76,3 +76,11 @@
 .active{
   @apply text-primary border-b-secondary;
 }
+.animate-left.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+.animate-right.show {
+  opacity: 1;
+  transform: translateX(0);
+}

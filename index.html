@@ -13,7 +13,7 @@
     />
     <link rel="stylesheet" href="./src/output.css" />
   </head>
-  <body>
+  <body class="overflow-x-hidden bg-background-white">
     <header>
       <!-- Top Bar -->
       <div
@@ -61,7 +61,7 @@
 
       <!-- Navbar -->
       <div
-        class="navbar sticky top-0 left-0 right-0 bg-background-white w-full z-[999] border-b border-gray-200 shadow-sm transition-all duration-500 ease-in-out opacity-100 transform translate-y-0 will-change-transform will-change-opacity"
+        class="navbar py-1.5 sticky top-0 left-0 right-0 bg-background-white w-full z-[999] border-b border-gray-200 shadow-sm transition-all duration-500 ease-in-out opacity-100 transform translate-y-0 will-change-transform will-change-opacity"
       >
         <div
           class="navbar-container relative flex items-center justify-between py-1 px-4 md:px-8"
@@ -141,30 +141,187 @@
     </header>
 
     <main>
-      <section class="hero w-screen overflow-hidden " dir="ltr">
-        <div class="slider relative w-full">
-          <div class="slides flex transition-transform duration-500 ease-in-out will-change-transform">
-            <div class="slide min-w-screen text-center relative">
-                      <div class="absolute inset-0 bg-black/50 z-10"></div>
+<section class="hero w-screen overflow-hidden" dir="ltr">
+  <div class="slider relative w-full overflow-hidden">
+    <div class="slides flex transition-transform duration-500 ease-in-out will-change-transform">
+      <div class="slide min-w-full text-center relative">
+        <div class="absolute inset-0 bg-black/50 z-10"></div>
+        <img src="./images/aym_qdr5.webp" alt="Slide 1" class="w-full h-[500px] object-cover relative z-0" />
+      </div>
+      <div class="slide min-w-full text-center relative">
+        <div class="absolute inset-0 bg-black/50 z-10"></div>
+        <img src="./images/MK10.webp" alt="Slide 2" class="w-full h-[500px] object-cover relative z-0" />
+      </div>
+      <div class="slide min-w-full text-center relative">
+        <div class="absolute inset-0 bg-black/50 z-10"></div>
+        <img src="./images/ML3.webp" alt="Slide 3" class="w-full h-[500px] object-cover relative z-0" />
+      </div>
+      <div class="slide min-w-full text-center relative">
+        <div class="absolute inset-0 bg-black/50 z-10"></div>
+        <img src="./images/aym_qdr5.webp" alt="Slide 4" class="w-full h-[500px] object-cover relative z-0" />
+      </div>
+    </div>
+    <div class="absolute bottom-4 w-full text-center z-20 dots" role="tablist" aria-label="تنقل الشرائح"></div>
+  </div>
+</section>
 
-              <img src="./images/aym_qdr5.webp" alt="Slide 1" class="w-full h-[500px] object-cover relative z-0" />
-            </div>
-            <div class="slide min-w-screen text-center relative">
-              <img src="./images/MK10.webp" alt="Slide 2" class="w-full h-[500px] object-cover relative z-0" />
-            </div>
-            <div class="slide min-w-screen text-center relative">
-              <img src="./images/ML3.webp" alt="Slide 3" class="w-full h-[500px] object-cover relative z-0"/>
-            </div>
-            <div class="slide min-w-screen text-center relative">
-              <img src="images/aym_qdr5.webp" alt="Slide 4" class="w-full h-[500px] object-cover relative z-0" />
-            </div>
-          </div>
-          <div class="absolute bottom-4 w-full text-center z-20 dots" role="tablist" aria-label="تنقل الشرائح"></div>
+
+<section class="about py-16">
+  <div class="container mx-auto px-4">
+    <div class="section-header text-center mb-12">
+      <h3 class="text-[3.3rem] text-primary mb-4">مؤسســـة قدرات</h3>
+      <p class="text-[1.8rem] text-primary-text leading-relaxed">نحن نعمل في العديد من المجالات</p>
+    </div>
+
+    <div class="section-body flex flex-col gap-2">
+
+      <!-- التعليم -->
+<div class="about-item flex flex-col-reverse md:flex-row justify-around items-center gap-3 py-8">
+        <div class="img-about w-full md:w-[45%] text-left animate-left">
+          <img src="./images/education.jpg" alt="عن المؤسسة" class="rounded-lg w-full h-auto" />
         </div>
-      </section>
+        <div class="about-text w-full md:w-[45%] text-right  pr-5  animate-right relative">
+          <h3 class="text-[2.3rem] text-secondary relative after:content-[''] after:absolute after:top-0 after:-right-4 after:w-[60px] after:h-[60px] after:bg-white-secondary after:opacity-30 after:rounded-full after:-z-10">
+            التعليم
+          </h3>
+          <p class="text-[1.1rem] text-primary-text  leading-7 mt-4">تلتزم المؤسسة بتعزيز فرص التعليم للجميع، مع التركيز على تحسين جودة التعليم في المناطق
+                                الريفية والمحرومة. نعمل على تنفيذ مشاريع تعليمية تشمل تقديم الدعم للمدارس، توفير
+                                المستلزمات التعليمية، وتنظيم ورش عمل وتدريب للمعلمين لتعزيز قدراتهم. نسعى لتعزيز الوصول
+                                إلى التعليم الأساسي والمهني، وتحفيز الأطفال والشباب على مواصلة تعليمهم ليكونوا أفرادًا
+                                فاعلين في المجتمع. </p>
+        </div>
+      </div>
 
-      
+      <!-- تمكين الشباب والنساء -->
+<div class="about-item flex flex-col-reverse md:flex-row-reverse justify-around items-center gap-3 py-8">
+        <div class="img-about w-full md:w-[45%] text-right animate-right">
+          <img src="./images/people.png" alt="عن المؤسسة" class="rounded-lg w-full h-auto" />
+        </div>
+        <div class="about-text w-full md:w-[45%] text-right pr-5 animate-left">
+          <h3 class="text-[2.3rem] text-secondary relative after:content-[''] after:absolute after:top-0 after:-right-4 after:w-[60px] after:h-[60px] after:bg-white-secondary after:opacity-30 after:rounded-full after:-z-10">
+            تمكين الشباب والنساء
+          </h3>
+          <p class="text-[1.1rem] text-primary-text  leading-7 mt-4">تركز المؤسسة على تمكين الشباب والنساء في مختلف المجالات الاقتصادية والاجتماعية والسياسية،
+                                مع إيلاء اهتمام خاص لتعزيز مشاركتهم في صناعة القرار. تشمل برامجنا تدريبهم على المهارات
+                                القيادية، التفاوض، وريادة الأعمال، مع تمكينهم من الانخراط في الشؤون السياسية والمجتمعية.
+                                نسعى لتوفير منصات تساهم في تعزيز الوعي لديهم، وتقديم الدعم والمشورة اللازمة لتمكينهم من
+                                لعب أدوار فعّالة في بناء مستقبلهم والمشاركة الفاعلة في صنع القرارات التي تؤثر على حياتهم
+                                ومجتمعاتهم</p>
+        </div>
+      </div>
+
+      <!-- البيئة والمناخ -->
+<div class="about-item flex flex-col-reverse md:flex-row justify-around items-center gap-3 py-8">
+        <div class="img-about w-full md:w-[45%] text-right animate-left">
+          <img src="./images/climate.jpg" alt="عن المؤسسة" class="rounded-lg w-full h-auto" />
+        </div>
+        <div class="about-text w-full md:w-[45%] text-right  pr-5 animate-right">
+          <h3 class="text-[2.3rem] text-secondary relative after:content-[''] after:absolute after:top-0 after:-right-4 after:w-[60px] after:h-[60px] after:bg-white-secondary after:opacity-30 after:rounded-full after:-z-10">
+            البيئة والمناخ
+          </h3>
+          <p class="text-[1.1rem] text-primary-text  leading-7 mt-4">نلتزم بحماية البيئة ومكافحة التغير المناخي من خلال مشاريع توعية ومبادرات بيئية مستدامة.
+                                نعمل على تعزيز الوعي البيئي في المجتمع من خلال حملات توعية حول الحفاظ على الموارد
+                                الطبيعية والتقليل من البصمة الكربونية. تشمل برامجنا مبادرات لإعادة التشجير، تنظيف
+                                الأماكن العامة، وتشجيع استخدام الطاقة المتجددة والممارسات البيئية المستدامة في الحياة
+                                اليومية</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="relative text-white text-center py-32 px-5 bg-fixed bg-center bg-cover bg-no-repeat animate-section counter-section"
+         style="background-image: url('../images/MK10.webp');">
+  <div class="absolute inset-0 bg-black opacity-60 z-0"></div>
+  <div class="relative z-10 flex flex-wrap justify-center gap-14 max-w-6xl mx-auto ">
+    
+    <!-- Counter Item -->
+<div class="flex-1 min-w-[200px] bg-white/10 p-6 rounded-xl shadow-md hover:-translate-y-2 hover:shadow-xl transition-all group">
+  <i class="fas fa-check-circle fa-3x text-secondary mb-5 transition-colors duration-300 group-hover:text-primary"></i>
+  <h2 class="text-4xl font-bold counter" data-target="100">0</h2>
+  <p class="text-gray-200 mt-2">مشروع ناجح</p>
+</div>
+
+
+    <!-- Counter Item -->
+    <div class="flex-1 min-w-[200px] bg-white/10 p-6 rounded-xl shadow-md hover:-translate-y-2 hover:shadow-xl transition-all group">
+      <i class="fas fa-users fa-3x text-secondary mb-5 transition-colors duration-300  group-hover:text-primary"></i>
+      <h2 class="text-4xl font-bold counter" data-target="5000">0</h2>
+      <p class="text-gray-200 mt-2">مستفيد من برامجنا</p>
+    </div>
+        <!-- Counter Item -->
+    <div class="flex-1 min-w-[200px] bg-white/10 p-6 rounded-xl shadow-md hover:-translate-y-2 hover:shadow-xl transition-all group ">
+      <i class="fas fa-users fa-3x text-secondary mb-5 transition-colors duration-300  group-hover:text-primary"></i>
+      <h2 class="text-4xl font-bold counter" data-target="5000">0</h2>
+      <p class="text-gray-200 mt-2">مستفيد من برامجنا</p>
+    </div>
+
+    <!-- Counter Item -->
+<div class="flex-1 min-w-[200px] bg-white/10 p-6 rounded-xl shadow-md hover:-translate-y-2 hover:shadow-xl transition-all group">
+  <i class="fas fa-check-circle fa-3x text-secondary mb-5 transition-colors duration-300 group-hover:text-primary"></i>
+  <h2 class="text-4xl font-bold counter" data-target="100">0</h2>
+  <p class="text-gray-200 mt-2">مشروع ناجح</p>
+</div>
+
+  </div>
+</section>
+
+   
     </main>
+
+
+<footer class="bg-background-white text-primary-text font-sans border-t border-gray-200 pt-10 pb-6">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-11">
+    <div class="flex flex-col md:flex-row md:flex-wrap justify-between gap-10">
+
+      <!-- Logo & Info -->
+      <div class="flex flex-col sm:flex-row items-start gap-4 min-w-[250px] flex-1">
+        <img src="./images/q png.webp" alt="Logo" class="w-14 h-auto rounded-md" />
+        <div class="space-y-3 mt-2 sm:mt-0">
+          <h2 class="text-xl font-bold">مؤسسة قدرات</h2>
+          <p class="text-sm"><i class="fa-solid fa-location-dot text-secondary ml-2"></i> اليمن - تعز - جولة وادي القاضي</p>
+          <p class="text-sm"><i class="fa-solid fa-phone text-secondary ml-2"></i> 737354001</p>
+          <p class="text-sm"><i class="fa-solid fa-envelope text-secondary ml-2"></i> info@qdurat.org</p>
+        </div>
+      </div>
+
+      <!-- Links -->
+      <div class="flex-1 min-w-[200px] rtl:text-right mt-6 md:mt-0">
+        <ul class="space-y-2">
+          <li><a href="index.html" class="text-sm hover:text-yellow-600 transition">الرئيسية</a></li>
+          <li><a href="about.html" class="text-sm hover:text-yellow-600 transition">من نحن</a></li>
+          <li><a href="projects.html" class="text-sm hover:text-yellow-600 transition">المشاريع</a></li>
+          <li><a href="#" class="text-sm hover:text-yellow-600 transition">الاخبار</a></li>
+          <li><a href="contact-us.html" class="text-sm hover:text-yellow-600 transition">تواصل معنا</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="flex-1 min-w-[200px] space-y-2 rtl:text-right mt-6 md:mt-0">
+        <p class="text-sm">للتواصل: 737354001</p>
+        <p class="text-sm">البريد الإلكتروني: info@qdurat.org</p>
+      </div>
+
+      <!-- Social Icons -->
+      <div class="flex justify-start md:justify-center gap-4 text-xl text-gray-600 mt-6 md:mt-0">
+        <a href="https://facebook.com" target="_blank" class="hover:text-secondary"><i class="fa-brands fa-square-facebook text-primary-text"></i></a>
+        <a href="https://twitter.com" target="_blank" class="hover:text-secondary"><i class="fa-brands fa-square-x-twitter text-primary-text"></i></a>
+        <a href="https://instagram.com" target="_blank" class="hover:text-secondary"><i class="fa-brands fa-square-instagram text-primary-text"></i></a>
+        <a href="https://youtube.com" target="_blank" class="hover:text-secondary"><i class="fa-brands fa-linkedin text-primary-text"></i></a>
+      </div>
+
+    </div>
+
+    <!-- Bottom Footer -->
+    <div class="text-center text-sm text-gray-500 border-t border-gray-500 mt-10 pt-4">
+      &copy; 2025 مؤسسة قدرات. جميع الحقوق محفوظة.
+    </div>
+  </div>
+</footer>
+
+
 
     <script src="./js/main.js"></script>
   </body>

@@ -147,3 +147,58 @@ function updateSlider() {
         }, 5000);
     });
 })();
+
+
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.animate-left, .animate-right').forEach(el => observer.observe(el));
+
+
+
+
+
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const counters = document.querySelectorAll('.counter');
+    let hasAnimated = false;
+
+    const animateCounters = () => {
+      if (hasAnimated) return;
+      counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        let count = 0;
+        const speed = target / 100;
+
+        const updateCount = () => {
+          if (count < target) {
+            count += speed;
+            counter.textContent = Math.floor(count);
+            requestAnimationFrame(updateCount);
+          } else {
+            counter.textContent = target;
+          }
+        };
+
+        updateCount();
+      });
+      hasAnimated = true;
+    };
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounters();
+        }
+      });
+    }, { threshold: 0.3 });
+
+    observer.observe(document.querySelector('.counter-section'));
+  });
