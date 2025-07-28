@@ -13,13 +13,15 @@
     />
     <link rel="stylesheet" href="./src/output.css" />
   </head>
-  <body >
-    <header >
+  <body>
+    <header>
       <!-- Top Bar -->
       <div
         class="top-bar bg-primary text-white-primary text-sm hidden md:flex md:justify-center md:items-center"
       >
-        <div class="container flex justify-between items-center py-1 px-4 md:px-8">
+        <div
+          class="container flex justify-between items-center py-1 px-4 md:px-8"
+        >
           <div class="contact-info center gap-5">
             <span>
               737354001
@@ -58,37 +60,111 @@
       </div>
 
       <!-- Navbar -->
-        <div class="navbar sticky top-0 left-0 right-0 bg-background-white w-full z-[999] border-b border-gray-200 shadow-sm transition-all duration-500 ease-in-out opacity-100 transform translate-y-0 will-change-transform will-change-opacity">
-            <div class=" navbar-container relative flex items-center justify-between py-1  px-4 md:px-8">
-                <nav class="nav-links bg-background-white hidden md:flex absolute md:relative top-full md:top-0 left-0 md:left-auto w-full md:w-auto  md:bg-transparent flex-col md:flex-row items-start md:items-center gap-4 md:gap-5 px-4 md:px-0 py-4 md:py-0 shadow-md md:shadow-none transition-all duration-300" id="navLinks">
-                    <ul class="w-full md:w-auto list-none flex flex-col  md:flex-row gap-4 md:gap-5 text-accent items-start md:items-center md:px-8">
-                        <li> <button id="theme-toggle" aria-label="Toggle dark/light mode" title="تبديل الوضع الليلي/النهاري"
-                        style="font-size: 1.5rem; background:none; border:none; cursor:pointer; color: var(--text-color);">
-                        <i class="fa-regular fa-moon text-primary-text"></i>
-                    </button></li>
-                        <li><a href="index.html" class=" font-bold px-2.5 py-1.5 text-primary border-b-2 border-secondary">الرئيسية</a></li>
-                        <li><a href="about.html"  class=" font-bold px-2.5 py-1.5 text-primary-text hover:text-primary hover:border-b-2 hover:border-secondary">من نحن</a></li>
-                        <li><a href="projects.html"  class=" font-bold px-2.5 py-1.5  text-primary-text hover:text-primary hover:border-b-2 hover:border-secondary">المشاريع</a></li>
-                        <li><a href="#"  class=" font-bold px-2.5 py-1.5 text-primary-text hover:text-primary hover:border-b-2 hover:border-secondary ">الاخبار</a></li>
-                        <li><a href="contact-us.html"  class=" font-bold px-2.5 py-1.5 text-primary-text  hover:text-primary hover:border-b-2 hover:border-secondary">تواصل معنا</a></li>
-                    </ul>
-                </nav>
-      <button id="menu-toggle" class="md:hidden text-[1.5em] cursor-pointer bg-none border-none text-secondary">
-        <i class="fa-solid fa-bars text-primary-text"></i>
-      </button>                <div class="logo px-8"><img src="./images/q png.webp" width="50" alt="">
-                    <!-- Dark/Light Mode Toggle Button -->
-                   
-                </div>
-
-
-            </div>
+      <div
+        class="navbar sticky top-0 left-0 right-0 bg-background-white w-full z-[999] border-b border-gray-200 shadow-sm transition-all duration-500 ease-in-out opacity-100 transform translate-y-0 will-change-transform will-change-opacity"
+      >
+        <div
+          class="navbar-container relative flex items-center justify-between py-1 px-4 md:px-8"
+        >
+          <nav
+            class="nav-links bg-background-white hidden md:flex absolute md:relative top-full md:top-0 left-0 md:left-auto w-full md:w-auto md:bg-transparent flex-col md:flex-row items-start md:items-center gap-4 md:gap-5 px-4 md:px-0 py-4 md:py-0 shadow-md md:shadow-none transition-all duration-300"
+            id="navLinks"
+          >
+            <ul
+              class="w-full md:w-auto list-none flex flex-col md:flex-row gap-4 md:gap-5 text-accent items-start md:items-center md:px-8"
+            >
+              <li>
+                <button
+                  id="theme-toggle"
+                  aria-label="Toggle dark/light mode"
+                  title="تبديل الوضع الليلي/النهاري"
+                  style="
+                    font-size: 1.5rem;
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                    color: var(--text-color);
+                  "
+                >
+                  <i class="fa-regular fa-moon text-primary-text"></i>
+                </button>
+              </li>
+              <li>
+                <a
+                  href="index.html"
+                  class="font-bold px-2.5 py-1.5 text-primary border-b-2 border-secondary"
+                  >الرئيسية</a
+                >
+              </li>
+              <li>
+                <a
+                  href="about.html"
+                  class="font-bold px-2.5 py-1.5 text-primary-text hover:text-primary hover:border-b-2 hover:border-secondary"
+                  >من نحن</a
+                >
+              </li>
+              <li>
+                <a
+                  href="projects.html"
+                  class="font-bold px-2.5 py-1.5 text-primary-text hover:text-primary hover:border-b-2 hover:border-secondary"
+                  >المشاريع</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="font-bold px-2.5 py-1.5 text-primary-text hover:text-primary hover:border-b-2 hover:border-secondary"
+                  >الاخبار</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact-us.html"
+                  class="font-bold px-2.5 py-1.5 text-primary-text hover:text-primary hover:border-b-2 hover:border-secondary"
+                  >تواصل معنا</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <button
+            id="menu-toggle"
+            class="md:hidden text-[1.5em] cursor-pointer bg-none border-none text-secondary"
+          >
+            <i class="fa-solid fa-bars text-primary-text"></i>
+          </button>
+          <div class="logo px-8">
+            <img src="./images/q png.webp" width="50" alt="" />
+            <!-- Dark/Light Mode Toggle Button -->
+          </div>
         </div>
+      </div>
     </header>
 
+    <main>
+      <section class="hero w-screen overflow-hidden " dir="ltr">
+        <div class="slider relative w-full">
+          <div class="slides flex transition-transform duration-500 ease-in-out will-change-transform">
+            <div class="slide min-w-screen text-center relative">
+                      <div class="absolute inset-0 bg-black/50 z-10"></div>
 
+              <img src="./images/aym_qdr5.webp" alt="Slide 1" class="w-full h-[500px] object-cover relative z-0" />
+            </div>
+            <div class="slide min-w-screen text-center relative">
+              <img src="./images/MK10.webp" alt="Slide 2" class="w-full h-[500px] object-cover relative z-0" />
+            </div>
+            <div class="slide min-w-screen text-center relative">
+              <img src="./images/ML3.webp" alt="Slide 3" class="w-full h-[500px] object-cover relative z-0"/>
+            </div>
+            <div class="slide min-w-screen text-center relative">
+              <img src="images/aym_qdr5.webp" alt="Slide 4" class="w-full h-[500px] object-cover relative z-0" />
+            </div>
+          </div>
+          <div class="absolute bottom-4 w-full text-center z-20 dots" role="tablist" aria-label="تنقل الشرائح"></div>
+        </div>
+      </section>
 
-
-    
+      
+    </main>
 
     <script src="./js/main.js"></script>
   </body>

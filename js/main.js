@@ -52,3 +52,98 @@ window.addEventListener("scroll", () => {
     navLinks.classList.toggle('hidden');
     navLinks.classList.toggle('flex');
   });
+
+
+  (() => {
+    const slides = document.querySelectorAll('.slide');
+    const slidesContainer = document.querySelector('.slides');
+    const dotsContainer = document.querySelector('.dots');
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+
+    // Create dots
+    for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('button');
+        dot.setAttribute('aria-label', `انتقال إلى الشريحة ${i + 1}`);
+        dot.setAttribute('role', 'tab');
+    dot.className = `
+      w-[14px] h-[14px] mx-[6px] rounded-full bg-white/60 transition-colors 
+      hover:bg-white focus:outline-none
+    `;
+
+    dot.addEventListener('click', () => goToSlide(i));
+    dotsContainer.appendChild(dot);
+
+    }
+
+
+    // Tailwind utility classes (matching your custom styles)
+
+    const dots = dotsContainer.querySelectorAll('button');
+    dots[0].classList.add('bg-primary');
+
+function updateSlider() {
+    slidesContainer.style.transform = `translateX(-${currentIndex * 100}vw)`;
+    dots.forEach((dot, i) => {
+        if (i === currentIndex) {
+            dot.classList.remove('bg-white/60');
+            dot.classList.add('bg-primary');
+        } else {
+            dot.classList.remove('bg-primary');
+            dot.classList.add('bg-white/60');
+        }
+    });
+}
+
+    function goToSlide(index) {
+        currentIndex = index;
+        updateSlider();
+    }
+
+    // Swipe support
+    let startX = 0;
+    let isSwiping = false;
+
+    slidesContainer.addEventListener('touchstart', e => {
+        startX = e.touches[0].clientX;
+        isSwiping = true;
+    });
+
+    slidesContainer.addEventListener('touchmove', e => {
+        if (!isSwiping) return;
+        const currentX = e.touches[0].clientX;
+        const diff = startX - currentX;
+
+        if (diff > 50) { // swipe left
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateSlider();
+            isSwiping = false;
+        } else if (diff < -50) { // swipe right
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            updateSlider();
+            isSwiping = false;
+        }
+    });
+
+    slidesContainer.addEventListener('touchend', () => {
+        isSwiping = false;
+    });
+
+    // Optional: Auto-slide every 5s
+    let autoSlideInterval = setInterval(() => {
+        console.log('Auto sliding to next slide');
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateSlider();
+    }, 5000);
+
+    // Pause auto-slide on hover/touchstart
+    document.querySelector('.slider').addEventListener('mouseenter', () => {
+        clearInterval(autoSlideInterval);
+    });
+    document.querySelector('.slider').addEventListener('mouseleave', () => {
+        autoSlideInterval = setInterval(() => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateSlider();
+        }, 5000);
+    });
+})();
