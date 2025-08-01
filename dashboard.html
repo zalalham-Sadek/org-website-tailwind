@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>لوحة تحكم - مؤسسة قدرات</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./src/output.css" />
+  </head>
+  <style>
+    @media (min-width: 768px) {
+      #mainHeader.sidebar-collapsed {
+        padding-right: 5rem; 
+      }
+      #main.sidebar-collapsed {
+        padding-right: 5rem; 
+      }
+    }
+  </style>
+  <body>
+    <div>
+      <header
+        dir="rtl"
+        id="mainHeader"
+        class="fixed top-0 left-0 right-0 z-30 h-16 bg-gray-100 shadow-md transition-all duration-300 w-full flex items-center md:pr-64"
+      >
+        <div
+          class="flex items-center justify-around w-full pr-4 gap-4 overflow-hidden"
+        >
+          <!-- Mobile Open Sidebar Button -->
+          <button id="openSidebar" class="md:hidden text-2xl pl-2">
+            &#9776;
+          </button>
+
+          <!-- Search Input -->
+          <div class="flex-1 pl-5">
+            <div class="relative max-w-sm w-full">
+              <input
+                type="text"
+                placeholder="Search..."
+                class="w-full pr-10 pl-4 py-2 text-sm rounded-3xl border-2 border-gray-100 focus:border-0 focus:outline-none focus:ring-2 focus:ring-secondary"
+              />
+              <span
+                class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500"
+              >
+                <!-- Heroicon: Search -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 21l-4.35-4.35m1.53-4.16a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+
+          <!-- Theme + User Icons -->
+          <div class="flex items-center gap-4 shrink-0">
+            <button id="theme-toggle" aria-label="Toggle theme" class="text-xl">
+              <i class="fa-regular fa-moon text-gray-800"></i>
+            </button>
+
+            <!-- Notification Icon -->
+            <span class="text-xl">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M21 19v1H3v-1l2-2v-6c0-3.1 2.03-5.83 5-6.71V4a2 2 0 0 1 2-2a2 2 0 0 1 2 2v.29c2.97.88 5 3.61 5 6.71v6zm-7 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2"
+                />
+              </svg>
+            </span>
+
+            <!-- Profile -->
+            <div class="w-10 h-10 bg-gray-200 rounded-full overflow-hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-full h-full text-gray-800 object-cover"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2M7.07 18.28c.43-.9 3.05-1.78 4.93-1.78s4.5.88 4.93 1.78A7.9 7.9 0 0 1 12 20c-1.86 0-3.57-.64-4.93-1.72m11.29-1.45c-1.43-1.74-4.9-2.33-6.36-2.33s-4.93.59-6.36 2.33A7.93 7.93 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8c0 1.82-.62 3.5-1.64 4.83M12 6c-1.94 0-3.5 1.56-3.5 3.5S10.06 13 12 13s3.5-1.56 3.5-3.5S13.94 6 12 6"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <aside
+        id="sidebar"
+        dir="rtl"
+        class="fixed top-0 right-0 h-full bg-primary pt-5 z-40 transition-all duration-300 ease-in-out overflow-hidden w-64 md:translate-x-0 translate-x-full"
+      >
+        <div
+          id="topSidepar"
+          class="flex items-center text-white px-4 justify-between"
+        >
+          <div id="logoText" class="flex items-center justify-between gap-2">
+            <span class="font-bold text-lg text-white">zalalham</span>
+          </div>
+          <!-- Collapse button (desktop only) -->
+          <button
+            id="toggleSidebar"
+            class="hidden md:block text-lg py-1 hover:bg-accent hover:rounded-2xl"
+          >
+            <span id="iconCollapsed">
+              <!-- Collapsed Icon -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m10.537 12l-4.24-4.246q-.141-.14-.154-.341t.153-.367q.16-.16.354-.16t.354.16l4.388 4.389q.131.13.184.267t.053.298t-.053.298t-.184.268l-4.388 4.388q-.14.14-.341.153t-.367-.153q-.16-.16-.16-.354t.16-.354zm6.1 0l-4.24-4.246q-.141-.14-.154-.341t.153-.367q.16-.16.354-.16t.354.16l4.388 4.389q.131.13.184.267t.053.298t-.053.298t-.184.268l-4.388 4.388q-.14.14-.341.153t-.367-.153q-.16-.16-.16-.354t.16-.354z"
+                />
+              </svg>
+            </span>
+            <span id="iconExpanded" class="hidden">
+              <!-- Expanded Icon -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M11.25 17.308L5.942 12l5.308-5.308l.708.708L7.364 12l4.594 4.6zm6.1 0L12.042 12l5.308-5.308l.708.708l-4.594 4.6l4.594 4.6z"
+                />
+              </svg>
+            </span>
+          </button>
+
+          <!-- Close Sidebar Button (Mobile) -->
+          <button
+            id="closeSidebar"
+            class="md:hidden text-accent text-2xl hover:cursor-pointer"
+          >
+            &times;
+          </button>
+        </div>
+
+        <!-- list sidebar -->
+
+        <nav
+          id="sidebar"
+          class="mt-4 space-y-5 text-white px-4 py-4 w-64 transition-all duration-300"
+        >
+          <a href="dashboard.html" class="flex items-center space-x-3">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M3 13h1v7c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2v-7h1a1 1 0 0 0 .707-1.707l-9-9a1 1 0 0 0-1.414 0l-9 9A1 1 0 0 0 3 13m9-8.586l6 6V15l.001 5H6v-9.586z"
+              />
+              <path
+                d="M12 18c3.703 0 4.901-3.539 4.95-3.689l-1.9-.621c-.008.023-.781 2.31-3.05 2.31c-2.238 0-3.02-2.221-3.051-2.316l-1.899.627C7.099 14.461 8.297 18 12 18"
+              />
+            </svg>
+            <span class="sidebar-text text-[18px]">لوحة التحكم</span>
+          </a>
+
+          <a href="" class="flex items-center space-x-3">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M3 13h1v7c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2v-7h1a1 1 0 0 0 .707-1.707l-9-9a1 1 0 0 0-1.414 0l-9 9A1 1 0 0 0 3 13m9-8.586l6 6V15l.001 5H6v-9.586z"
+              />
+              <path
+                d="M12 18c3.703 0 4.901-3.539 4.95-3.689l-1.9-.621c-.008.023-.781 2.31-3.05 2.31c-2.238 0-3.02-2.221-3.051-2.316l-1.899.627C7.099 14.461 8.297 18 12 18"
+              />
+            </svg>
+            <span class="sidebar-text text-[18px]">المستخدمين</span>
+          </a>
+
+          <a href="/speakers" class="flex items-center space-x-3">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M3 13h1v7c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2v-7h1a1 1 0 0 0 .707-1.707l-9-9a1 1 0 0 0-1.414 0l-9 9A1 1 0 0 0 3 13m9-8.586l6 6V15l.001 5H6v-9.586z"
+              />
+              <path
+                d="M12 18c3.703 0 4.901-3.539 4.95-3.689l-1.9-.621c-.008.023-.781 2.31-3.05 2.31c-2.238 0-3.02-2.221-3.051-2.316l-1.899.627C7.099 14.461 8.297 18 12 18"
+              />
+            </svg>
+            <span class="sidebar-text text-[18px]">الاعدادات</span>
+          </a>
+        </nav>
+      </aside>
+
+      <main
+        id="main"
+        dir="rtl"
+        class="pt-16 transition-all duration-300 overflow-y-auto md:pr-64"
+      >
+        <div class="p-6">
+          <h1 class="text-2xl font-bold mb-6 text-gray-800">لوحة التحكم</h1>
+
+          <!-- قسم البطاقات -->
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+          >
+            <!-- عدد الفعاليات -->
+            <div class="bg-white p-5 rounded-xl shadow border border-gray-100">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-gray-500">الفعاليات</p>
+                  <h2 class="text-xl font-bold text-gray-800">32</h2>
+                </div>
+                <div class="text-blue-500 bg-blue-100 p-2 rounded-full">
+                  <i class="fa-solid fa-calendar-days"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- عدد المتحدثين -->
+            <div class="bg-white p-5 rounded-xl shadow border border-gray-100">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-gray-500">المتحدثين</p>
+                  <h2 class="text-xl font-bold text-gray-800">18</h2>
+                </div>
+                <div class="text-purple-500 bg-purple-100 p-2 rounded-full">
+                  <i class="fa-solid fa-microphone"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- عدد المتطوعين -->
+            <div class="bg-white p-5 rounded-xl shadow border border-gray-100">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-gray-500">المتطوعين</p>
+                  <h2 class="text-xl font-bold text-gray-800">104</h2>
+                </div>
+                <div class="text-green-500 bg-green-100 p-2 rounded-full">
+                  <i class="fa-solid fa-hands-helping"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- التبرعات الشهرية -->
+            <div class="bg-white p-5 rounded-xl shadow border border-gray-100">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-gray-500">تبرعات هذا الشهر</p>
+                  <h2 class="text-xl font-bold text-gray-800">8,450 ﷼</h2>
+                </div>
+                <div class="text-yellow-500 bg-yellow-100 p-2 rounded-full">
+                  <i class="fa-solid fa-coins"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- نسبة الإنجاز -->
+            <div class="bg-white p-5 rounded-xl shadow border border-gray-100">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-gray-500">نسبة الإنجاز</p>
+                  <h2 class="text-xl font-bold text-gray-800">76%</h2>
+                </div>
+                <div class="text-pink-500 bg-pink-100 p-2 rounded-full">
+                  <i class="fa-solid fa-chart-line"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- الزوار هذا الشهر -->
+            <div class="bg-white p-5 rounded-xl shadow border border-gray-100">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-gray-500">زوار هذا الشهر</p>
+                  <h2 class="text-xl font-bold text-gray-800">12,390</h2>
+                </div>
+                <div class="text-red-500 bg-red-100 p-2 rounded-full">
+                  <i class="fa-solid fa-users"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mt-10 bg-white rounded-xl shadow p-6 border border-gray-100"
+        >
+          <h2 class="text-lg font-bold text-gray-800 mb-4">
+            إحصائيات التبرعات
+          </h2>
+          <canvas id="donationChart" height="150"></canvas>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      let sidebarCollapsed = false;
+      const sidebar = document.getElementById("sidebar");
+      const toggleBtn = document.getElementById("toggleSidebar");
+      const iconCollapsed = document.getElementById("iconCollapsed");
+      const iconExpanded = document.getElementById("iconExpanded");
+      const closeSidebar = document.getElementById("closeSidebar");
+      const openSidebar = document.getElementById("openSidebar");
+      const mainHeader = document.getElementById("mainHeader");
+      const topSidepar = document.getElementById("topSidepar");
+      const main = document.getElementById("main");
+
+      const logoText = document.getElementById("logoText");
+
+      // Collapse/Expand sidebar (desktop)
+      toggleBtn.addEventListener("click", () => {
+        sidebarCollapsed = !sidebarCollapsed;
+
+        sidebar.classList.toggle("w-20");
+        sidebar.classList.toggle("w-64");
+
+        iconCollapsed.classList.toggle("hidden", sidebarCollapsed);
+        iconExpanded.classList.toggle("hidden", !sidebarCollapsed);
+
+        // Toggle helper class for header padding
+        mainHeader.classList.toggle("sidebar-collapsed", sidebarCollapsed);
+        main.classList.toggle("sidebar-collapsed", sidebarCollapsed);
+
+        // Show/hide logo text
+        logoText.style.display = sidebarCollapsed ? "none" : "flex";
+        topSidepar.style.justifyContent = sidebarCollapsed
+          ? "justify-center"
+          : "justify-between";
+        const textSpans = sidebar.querySelectorAll(".sidebar-text");
+        textSpans.forEach((span) => {
+          span.classList.toggle("hidden");
+        });
+      });
+
+      // Close sidebar (mobile)
+      closeSidebar.addEventListener("click", () => {
+        sidebar.classList.add("translate-x-full");
+      });
+
+      // Open sidebar (mobile)
+      openSidebar.addEventListener("click", () => {
+        sidebar.classList.remove("translate-x-full");
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      const ctx = document.getElementById("donationChart");
+      new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: ["يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو"],
+          datasets: [
+            {
+              label: "التبرعات الشهرية",
+              data: [3000, 4000, 3500, 5000, 6000, 8450],
+              borderColor: "rgb(59, 130, 246)",
+              backgroundColor: "rgba(59, 130, 246, 0.2)",
+              tension: 0.3,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
